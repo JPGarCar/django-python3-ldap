@@ -1,3 +1,9 @@
+Edits byt JP Garcia:
+* LDAP_AUTH_USER_SEARCH_BASE used after uid=username,
+* always use SSL
+
+
+
 django-python3-ldap
 ===================
 

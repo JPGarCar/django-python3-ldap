@@ -147,7 +147,7 @@ def connection(**kwargs):
                 connect_timeout=settings.LDAP_AUTH_CONNECT_TIMEOUT,
                 use_ssl=True,
             ),
-            user='uid={},{}'.format(username, settings.LDAP_AUTH_USER_LOOKUP_FIELDS),
+            user='uid={},{}'.format(username, settings.LDAP_AUTH_USER_SEARCH_BASE),
             password=password,
             auto_bind=False,
             raise_exceptions=True,
