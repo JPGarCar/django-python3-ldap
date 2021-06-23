@@ -33,6 +33,11 @@ class LazySettings(object):
     def __init__(self, settings):
         self._settings = settings
 
+    LDAP_AUTH_USER_SEARCH_BASE = LazySetting(
+        name="LDAP_AUTH_USER_SEARCH_BASE",
+        default="",
+    )
+
     LDAP_AUTH_URL = LazySetting(
         name="LDAP_AUTH_URL",
         default="ldap://localhost:389",
