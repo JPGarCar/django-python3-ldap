@@ -143,11 +143,11 @@ def connection(**kwargs):
         c = ldap3.Connection(
             ldap3.Server(
                 settings.LDAP_AUTH_URL,
-                allowed_referral_hosts=[("*", True)],
-                get_info=ldap3.NONE,
+                get_info=ldap3.ALL,
                 connect_timeout=settings.LDAP_AUTH_CONNECT_TIMEOUT,
+                use_ssl=True,
             ),
-            user=username,
+            user='uid={},{}'.format(username, settings.LDAP_AUTH_USER_LOOKUP_FIELDS),
             password=password,
             auto_bind=False,
             raise_exceptions=True,
